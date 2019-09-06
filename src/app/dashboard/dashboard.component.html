@@ -1,0 +1,390 @@
+<div class="container-fluid">
+
+  <!-- <div class="header-position">
+    <mat-card class="header-card">
+      <div>
+        <h2>Production Dashboard</h2>
+      </div>
+
+      <div class="led-box1">
+        <div class="led-green1"></div>
+      </div>
+
+    </mat-card>
+  </div> -->
+
+  <mat-grid-list cols="4" rowHeight="50px">
+
+    <!-- OEE -->
+    <mat-grid-tile colspan="1" rowspan="7">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            OEE
+          </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <div class="percentage">
+            <h2>82%</h2>
+          </div>
+
+          <div id="OEEChartID" [style.width.%]="100" [style.height.px]="200"></div>
+        </mat-card-content>
+
+      </mat-card>
+    </mat-grid-tile>
+
+    <!-- Availability -->
+    <mat-grid-tile colspan="1" rowspan="7">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Availability
+          </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <div class="percentage">
+            <h2>82%</h2>
+          </div>
+
+          <div id="AvailabilityChartID" [style.width.%]="100" [style.height.px]="200"></div>
+        </mat-card-content>
+
+      </mat-card>
+    </mat-grid-tile>
+
+    <!-- Performance -->
+    <mat-grid-tile colspan="1" rowspan="7">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Performance
+          </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <div class="percentage">
+            <h2>82%</h2>
+          </div>
+
+          <div id="PerformanceChartID" [style.width.%]="100" [style.height.px]="200"></div>
+        </mat-card-content>
+
+      </mat-card>
+    </mat-grid-tile>
+
+    <!-- Quality -->
+    <mat-grid-tile colspan="1" rowspan="7">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Quality
+          </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <div class="percentage">
+            <h2>82%</h2>
+          </div>
+
+          <div id="QualityChartID" [style.width.%]="100" [style.height.px]="200"></div>
+        </mat-card-content>
+
+      </mat-card>
+    </mat-grid-tile>
+
+    <!-- Machine -->
+    <mat-grid-tile colspan="1" rowspan="7">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Machine / Batch Details
+          </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+
+          <div class="machine-status">
+            <div class="machine-status-text">
+              <p>Productive</p>
+            </div>
+
+            <div>
+              <div class="led-box1">
+                <div class="led-green1"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="batch-details-header">
+            <p>Batch Details</p>
+          </div>
+
+          <div class="batch-details-no">
+            <p>1. N-6584712</p>
+          </div>
+          
+          <div class="batch-details-no">
+            <p>2. N-8521479</p>
+          </div>
+
+          <div class="batch-details-no">
+            <p>3. N-7418560</p>
+          </div>
+
+        </mat-card-content>
+
+      </mat-card>
+    </mat-grid-tile>
+
+    <!-- Availability -->
+    <mat-grid-tile colspan="1" rowspan="7">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Availability
+          </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+
+          <div class="content-pad">
+            <div class="content-pad-icon">
+              <mat-icon class="icon-green">directions_run</mat-icon>
+            </div>
+
+            <div>
+              <div class="content-pad-time">
+                <p>00:00:00</p>
+              </div>
+              <div class="content-pad-time-text">
+                <p>Run Time</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-pad">
+            <div class="content-pad-icon">
+              <mat-icon class="icon-blue">airline_seat_recline_extra</mat-icon>
+            </div>
+
+            <div>
+              <div class="content-pad-time">
+                <p>00:00:00</p>
+              </div>
+              <div class="content-pad-time-text">
+                <p>Idle Time</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-pad">
+            <div class="content-pad-icon">
+              <mat-icon class="icon-red">trending_down</mat-icon>
+            </div>
+
+            <div>
+              <div class="content-pad-time">
+                <p>00:00:00</p>
+              </div>
+              <div class="content-pad-time-text">
+                <p>BreakDown Time</p>
+              </div>
+            </div>
+          </div>
+
+        </mat-card-content>
+
+      </mat-card>
+    </mat-grid-tile>
+
+    <!-- Performance -->
+    <mat-grid-tile colspan="1" rowspan="7">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Performance
+          </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <div class="content-pad">
+            <div class="content-pad-icon">
+              <mat-icon class="icon-green">history</mat-icon>
+            </div>
+
+            <div>
+              <div class="content-pad-time">
+                <p>00:00:00</p>
+              </div>
+              <div class="content-pad-time-text">
+                <p>Ideal Cycle Time</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-pad">
+            <div class="content-pad-icon">
+              <mat-icon class="icon-blue">text_rotation_none</mat-icon>
+            </div>
+
+            <div>
+              <div class="content-pad-time">
+                <p>00:00:00</p>
+              </div>
+              <div class="content-pad-time-text">
+                <p>Avg Time/ Part</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-pad">
+            <div class="content-pad-icon">
+              <mat-icon class="icon-red">equalizer</mat-icon>
+            </div>
+
+            <div>
+              <div class="content-pad-time">
+                <p>00:00:00</p>
+              </div>
+              <div class="content-pad-time-text">
+                <p>Standard Time</p>
+              </div>
+            </div>
+          </div>
+        </mat-card-content>
+
+      </mat-card>
+    </mat-grid-tile>
+
+    <!-- Quality -->
+    <mat-grid-tile colspan="1" rowspan="7">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Quality (Good / Reject)
+          </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+
+          <div class="percentage">
+            <h2><span class="good-qty-text">85</span> / <span class="reject-qty-text">15</span></h2>
+          </div>
+
+          <div id="QualityOkRejectChartID" [style.width.%]="100" [style.height.px]="200"></div>
+        </mat-card-content>
+
+      </mat-card>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+
+  <mat-grid-list cols="8" rowHeight="50px">
+
+    <!-- Hourly Production -->
+    <mat-grid-tile colspan="5" rowspan="9">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Hourly Production (HH)
+          </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <div id="HourlyProductionChartID" [style.width.%]="100" [style.height.px]="350"></div>
+        </mat-card-content>
+
+      </mat-card>
+    </mat-grid-tile>
+
+    <!-- Activity Analysis -->
+    <mat-grid-tile colspan="3" rowspan="9">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Activity Analysis
+          </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+
+          <div id="ActivityAnalysisChartID" [style.width.%]="100" [style.height.px]="350"></div>
+        </mat-card-content>
+
+      </mat-card>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+
+  <mat-grid-list cols="8" rowHeight="50px">
+    <mat-grid-tile colspan="8" rowspan="9">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Current Trend
+          </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+
+          <div id="CurrentTrendChartID" [style.width.%]="100" [style.height.px]="350"></div>
+        </mat-card-content>
+
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="8" rowspan="9">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Voltage Trend
+          </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+
+          <div id="VoltageTrendChartID" [style.width.%]="100" [style.height.px]="350"></div>
+        </mat-card-content>
+
+      </mat-card>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+
+  <mat-grid-list cols="8" rowHeight="50px">
+    <mat-grid-tile colspan="4" rowspan="9">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Current Live
+          </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <div id="CurrentLiveChartID" [style.width.%]="100" [style.height.px]="350"></div>
+        </mat-card-content>
+
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="4" rowspan="9">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Voltage Live
+          </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <div id="VoltageLiveChartID" [style.width.%]="100" [style.height.px]="350"></div>
+        </mat-card-content>
+
+      </mat-card>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+
+</div>

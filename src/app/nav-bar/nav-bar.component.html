@@ -1,0 +1,97 @@
+<mat-sidenav-container class="sidenav-container">
+  <!-- left Side Menu -->
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="settingsService.left_sidemenu_position" [opened]="(isHandset$ | async)">
+
+    <mat-toolbar class="side-bar-profile" [style.background-color]="settingsService.navbar_background_color">
+      <div class="user-profile">
+        <mat-icon class="user-icon">portrait</mat-icon>
+        <div class="user-detail">
+          <div class="user-name">Mahindra User</div>
+          <div class="user-email">user@mahindra.com</div>
+        </div>
+      </div>
+
+      <div class="user-role">USER</div>
+
+    </mat-toolbar>
+
+    <app-side-menu></app-side-menu>
+
+  </mat-sidenav>
+  <!-- End of Left Side Menu -->
+
+  <!-- Right Side Menu -->
+  <mat-sidenav #rightdrawer class="right-sidenav" position="end" fixedInViewport="true" [mode]="settingsService.right_sidemenu_position"
+  [opened]="(isHandset$ | async)">
+
+  <mat-toolbar [style.background-color]="settingsService.navbar_background_color">Settings</mat-toolbar>
+
+  <app-right-side-menu></app-right-side-menu>
+    
+  </mat-sidenav>
+  <!-- End of the Right Side Menu -->
+
+  <mat-sidenav-content>
+    <mat-toolbar class="nav-bar-shadow" [style.background-color]="settingsService.navbar_background_color">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <!-- <span>Aditya Dashboard</span> -->
+
+      <img src="assets/MAS.png" height="25" class="pointer-change">
+
+      <div class="nav-text">
+        <p class="nav-text-header">Company</p>
+        <p class="nav-text-content">Aditya Auto</p>
+      </div>
+
+      <p class="nav-text-divider">|</p>
+
+      <div class="nav-text">
+        <p class="nav-text-header">Plant</p>
+        <p class="nav-text-content">Auto</p>
+      </div>
+
+      <p class="nav-text-divider">|</p>
+
+      <div class="nav-text">
+        <p class="nav-text-header">Work Center</p>
+        <p class="nav-text-content">U02LC01</p>
+      </div>
+
+      <p class="nav-text-divider">|</p>
+
+      <div class="nav-text">
+        <p class="nav-text-header">Date</p>
+        <p class="nav-text-content">03-02-2019</p>
+      </div>
+
+      <p class="nav-text-divider">|</p>
+
+      <div class="nav-text">
+        <p class="nav-text-header">Shift</p>
+        <p class="nav-text-content">Shift 1</p>
+      </div>
+
+      <div class="sch-logo">
+        <div>
+          <button mat-icon-button (click)="openDateFilterModal()">
+            <mat-icon>filter_list</mat-icon>
+          </button>
+        </div>
+
+        <div>
+          <img src="assets/SCH_Full_White.png" height="35" class="pointer-change" (click)="rightdrawer.toggle()">
+        </div>
+      </div>
+
+    </mat-toolbar>
+
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

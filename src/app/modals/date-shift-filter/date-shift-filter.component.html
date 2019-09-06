@@ -1,0 +1,29 @@
+<div mat-dialog-header>
+  <h4 mat-dialog-title>Date & Shift Filter</h4>
+</div>
+
+<div mat-dialog-content>
+  <form>
+    <mat-form-field>
+      <input matInput [matDatepicker]="dateFilter" placeholder="Date">
+      <mat-datepicker-toggle matSuffix [for]="dateFilter"></mat-datepicker-toggle>
+      <mat-datepicker #dateFilter></mat-datepicker>
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field>
+      <mat-select placeholder="Select Shift" [value]="shift" (selectionChange)="onChange($event.value)">
+        <mat-option *ngFor="let shift of ShiftDropdown" [value]="shift.shift_code">
+          {{shift.shift_desc}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button cdkFocusInitial (click)="onFilter()">Submit</button>
+</div>

@@ -1,0 +1,73 @@
+<div style="height: 64px;"></div>
+
+<side-nav-menu [sidenav]="rightdrawer">
+
+  <side-nav-x-group title="Top Navbar">
+    <color-circle [color]="state" (onChangeComplete)="changeComplete($event)"></color-circle>
+  </side-nav-x-group>
+
+  <side-nav-x-group title="Left Side Menu">
+    <div class="sub-header">
+      <p>Position</p>
+    </div>
+
+    <mat-radio-group [(ngModel)]="settingsService.left_sidemenu_position">
+      <mat-radio-button value="over">Over</mat-radio-button>
+      <mat-radio-button value="side">Side</mat-radio-button>
+      <mat-radio-button value="push">Push</mat-radio-button>
+    </mat-radio-group>
+  </side-nav-x-group>
+
+  <side-nav-x-group title="Right Side Menu">
+    <div class="sub-header">
+      <p>Position</p>
+    </div>
+
+    <mat-radio-group [(ngModel)]="settingsService.right_sidemenu_position">
+      <mat-radio-button value="over">Over</mat-radio-button>
+      <mat-radio-button value="side">Side</mat-radio-button>
+      <mat-radio-button value="push">Push</mat-radio-button>
+    </mat-radio-group>
+  </side-nav-x-group>
+
+  <side-nav-x-group title="OEE Color Config">
+
+    <div class="card-shadow">
+      <div class="sub-header">
+        <p>OEE</p>
+      </div>
+
+      <div class="custom-slider">
+        <ng5-slider [(value)]="OEEminValue" [(highValue)]="OEEmaxValue" [options]="options"></ng5-slider>
+      </div>
+    </div>
+
+
+    <div class="sub-header">
+      <p>Availability</p>
+    </div>
+
+    <div class="custom-slider">
+      <ng5-slider [(value)]="AvailabilityminValue" [(highValue)]="AvailabilitymaxValue" [options]="options"></ng5-slider>
+    </div>
+
+    <div class="sub-header">
+      <p>Performance</p>
+    </div>
+
+    <div class="custom-slider">
+      <ng5-slider [(value)]="PerformanceminValue" [(highValue)]="PerformancemaxValue" [options]="options"></ng5-slider>
+    </div>
+
+    <div class="sub-header">
+      <p>Quality</p>
+    </div>
+
+    <div class="custom-slider">
+      <ng5-slider [(value)]="QualityminValue" [(highValue)]="QualitymaxValue" [options]="options"></ng5-slider>
+    </div>
+
+
+  </side-nav-x-group>
+
+</side-nav-menu>
